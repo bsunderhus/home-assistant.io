@@ -15,7 +15,7 @@ ha_integration_type: device
 ha_config_flow: true
 ---
 
-The **Generic Cover** {% term integration %} allows you to create {% term cover %} {% term entities entity %} that are controlled by two separate switches - one for opening/up movement and one for closing/down movement. This is particularly useful for DIY covers, blinds, or shutters that use relay switches for directional control.
+The **Generic Cover** {% term integration %} allows you to create {% term cover %} {% term entities entity %} that are controlled by two separate switches. One switch is for opening/up movement and the other is for closing/down movement. This is particularly useful for DIY covers, blinds, or shutters that use relay switches for directional control.
 
 ## Supported devices
 
@@ -49,7 +49,7 @@ Close switch entity:
 Duration:
   description: Time in seconds for a complete open or close cycle.
 Tilt duration:
-  description: Time in seconds for a complete tilt cycle. Leave empty if tilt functionality is not needed.
+  description: Time in seconds for a complete tilt cycle. You can leave this empty if your cover doesn't need tilt functionality.
 {% endconfiguration_basic %}
 
 ## Supported functionality
@@ -144,10 +144,10 @@ The Generic Cover integration operates using:
 
 ## Known limitations
 
-- **Position accuracy depends on timing**: Position tracking relies on consistent movement timing and may drift over time
-- **No position feedback**: The integration cannot verify actual cover position, only estimates based on timing
-- **Manual recalibration needed**: Periodic manual full open/close cycles may be required to maintain accuracy
-- **Switch dependency**: Proper operation requires reliable switch {% term entities entity %} that accurately report state changes
+- The cover position might become less accurate over time because it relies on timing rather than actual position sensors. Position tracking depends on consistent movement timing and may drift.
+- The integration cannot verify the actual cover position. It can only estimate the position based on timing.
+- You may need to run periodic manual full open/close cycles to maintain position accuracy.
+- For the integration to work properly, your switch {% term entities entity %} need to reliably report state changes.
 
 ## Troubleshooting
 
